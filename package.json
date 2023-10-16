@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run build-babel",
+    "build-babel": "babel -d ./build ./src -s",
+    "clean": "rm -rf .nyc_output build coverage && mkdir build",
+    "dev": "cross-env DEBUG=dev nodemon --exec babel-node src/index.js",
+    "start": "node ./build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.11",
+    "@babel/node": "^7.22.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/preset-env": "^7.22.14",
+    "nodemon": "^3.0.1",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "logger": "^0.0.1",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "passport": "^0.6.0",
+    "passport-steam": "^1.0.18",
+    "session": "^0.1.0"
+  }
+}
